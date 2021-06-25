@@ -1,0 +1,16 @@
+.border-resizer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    cursor: ew-resize;
+}
+
+.border-resizer.active {
+    background: black;
+}
+
+.border-resizer:hover {
+    background: black;
+}

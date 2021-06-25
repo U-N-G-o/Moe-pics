@@ -1,0 +1,42 @@
+.mainbox {
+    margin-top: 80px;
+    padding-bottom: 2%;
+    min-height: calc(100vh - 80px);
+    overflow: hidden;
+    width: auto;
+}
+
+.mainbox.grid{
+    padding: 2% 60px;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 10px;
+}
+
+.prebtn {
+    position: fixed;
+    left: 2px;
+    top: 50%;
+    transform: rotate(90deg);
+    cursor: pointer;
+    fill: rgb(219, 219, 219);
+    transition: fill 0.2s linear;
+}
+
+.nextbtn {
+    position: fixed;
+    right: 2px;
+    top: 50%;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    fill: rgb(219, 219, 219);
+    transition: fill 0.2s linear;
+}
+
+.prebtn:hover,
+.nextbtn:hover {
+    fill: #707070
+}

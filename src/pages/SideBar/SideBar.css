@@ -1,0 +1,93 @@
+.sidebar {
+    float: left;
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 300px;
+    height: 100vh;
+    background: rgb(247, 247, 247);
+    padding: 20px 0;
+    border-right: 1px solid rgb(219, 219, 219);
+    overflow: hidden auto;
+}
+.sidebar::-webkit-scrollbar {display:none}
+
+.title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    fill: #8a8a8a;
+    position: relative;
+}
+
+.title.active {
+    color: #fff;
+    fill: #fff;
+    background-color: #5b0db4;
+}
+
+.title:hover {
+    background-color: #20a0ff;
+    fill: #fff;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+}
+
+.delete {
+    margin-left: auto;
+    z-index: 99;
+}
+
+.arrow {
+    transform: rotate(-90deg);
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.arrow.expanded {
+    transform: rotate(0deg);
+}
+
+.timepicker {
+    margin-left: auto;
+    width: auto;
+    z-index: 99;
+}
+
+.breadlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2% 0;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.breed {
+    cursor: pointer;
+    width: 100%;
+    padding: 5px 40px;
+    list-style: none;
+    background-color: #fff;
+}
+
+.breed:nth-child(2n) {
+    background-color: rgb(247, 247, 247);
+}
+
+.breed:hover {
+    background-color: #20a0ff;
+}
+
+.breed.active {
+    color: #fff;
+    background-color: #5b0db4;
+}
+
+.count {
+    color: gray;
+}

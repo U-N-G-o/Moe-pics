@@ -1,0 +1,12 @@
+.idealist {
+  position: absolute;
+  width: 200px;
+  height: 240px;
+  min-height: 26px;
+  bottom: -240px;
+  border: 1px solid rgb(219, 219, 219);
+  border-top: none;
+  background-color: rgb(219, 219, 219);
+  overflow: hidden auto;
+  z-index: 99;
+}
