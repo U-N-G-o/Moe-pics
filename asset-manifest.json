@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Moe-pics-demo/static/css/main.5d68e2e8.chunk.css",
-    "main.js": "/Moe-pics-demo/static/js/main.e9248987.chunk.js",
-    "main.js.map": "/Moe-pics-demo/static/js/main.e9248987.chunk.js.map",
+    "main.js": "/Moe-pics-demo/static/js/main.a3874a73.chunk.js",
+    "main.js.map": "/Moe-pics-demo/static/js/main.a3874a73.chunk.js.map",
     "runtime-main.js": "/Moe-pics-demo/static/js/runtime-main.9f59411c.js",
     "runtime-main.js.map": "/Moe-pics-demo/static/js/runtime-main.9f59411c.js.map",
     "static/js/2.227140d1.chunk.js": "/Moe-pics-demo/static/js/2.227140d1.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.9f59411c.js",
     "static/js/2.227140d1.chunk.js",
     "static/css/main.5d68e2e8.chunk.css",
-    "static/js/main.e9248987.chunk.js"
+    "static/js/main.a3874a73.chunk.js"
   ]
 }
