@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.5d68e2e8.chunk.css",
-    "main.js": "./static/js/main.6627e5ea.chunk.js",
-    "main.js.map": "./static/js/main.6627e5ea.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.62c158ef.js",
-    "runtime-main.js.map": "./static/js/runtime-main.62c158ef.js.map",
-    "static/js/2.2da2ce36.chunk.js": "./static/js/2.2da2ce36.chunk.js",
-    "static/js/2.2da2ce36.chunk.js.map": "./static/js/2.2da2ce36.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/main.5d68e2e8.chunk.css.map": "./static/css/main.5d68e2e8.chunk.css.map",
-    "static/js/2.2da2ce36.chunk.js.LICENSE.txt": "./static/js/2.2da2ce36.chunk.js.LICENSE.txt",
-    "static/media/loading.64bb1951.gif": "./static/media/loading.64bb1951.gif"
+    "main.css": "/Moe-pics/static/css/main.5d68e2e8.chunk.css",
+    "main.js": "/Moe-pics/static/js/main.0476f8c2.chunk.js",
+    "main.js.map": "/Moe-pics/static/js/main.0476f8c2.chunk.js.map",
+    "runtime-main.js": "/Moe-pics/static/js/runtime-main.711b8795.js",
+    "runtime-main.js.map": "/Moe-pics/static/js/runtime-main.711b8795.js.map",
+    "static/js/2.2da2ce36.chunk.js": "/Moe-pics/static/js/2.2da2ce36.chunk.js",
+    "static/js/2.2da2ce36.chunk.js.map": "/Moe-pics/static/js/2.2da2ce36.chunk.js.map",
+    "index.html": "/Moe-pics/index.html",
+    "static/css/main.5d68e2e8.chunk.css.map": "/Moe-pics/static/css/main.5d68e2e8.chunk.css.map",
+    "static/js/2.2da2ce36.chunk.js.LICENSE.txt": "/Moe-pics/static/js/2.2da2ce36.chunk.js.LICENSE.txt",
+    "static/media/loading.64bb1951.gif": "/Moe-pics/static/media/loading.64bb1951.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.62c158ef.js",
+    "static/js/runtime-main.711b8795.js",
     "static/js/2.2da2ce36.chunk.js",
     "static/css/main.5d68e2e8.chunk.css",
-    "static/js/main.6627e5ea.chunk.js"
+    "static/js/main.0476f8c2.chunk.js"
   ]
 }
