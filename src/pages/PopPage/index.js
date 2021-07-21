@@ -14,7 +14,7 @@ const PopPage = ({ barWidth }) => {
   const { date } = useParams()
 
   useEffect(() => {
-    const limit = Math.floor((window.innerWidth - barWidth - 100) / 210) * 10
+    const limit = Math.floor((window.innerWidth - barWidth - 120) / 260) * 10
     const fetchList = async () => {
       const dateSplit = date.split('-')
       const defaultList = await getPopList(api, dateSplit, limit)

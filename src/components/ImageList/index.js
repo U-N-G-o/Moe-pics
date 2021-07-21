@@ -3,19 +3,20 @@ import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux"
 import { changeIsShow, changePage, collectionManager } from '../../store/actions'
 import { collections, addCollection, downloadPicture } from '../../models'
-import { getCollectList, debounce } from '../../utils/functions'
+import { getCollectList } from '../../utils/functions'
 import Dialog from '../Dialog/Dialog';
 import loading from '../../assets/loading.gif'
 import './style.css'
 
-const ImageList = ({ image, isCollected, limit }) => {
-  const currentPage = useSelector(state => state.img.currentPage)
+const ImageList = ({ image, isCollected }) => {
   const pageOffset = useSelector(state => state.showType.scrollTop)
   const [taglist, setTaglist] = useState([])
   const history = useHistory()
   const dispatch = useDispatch()
   const [showDialog, setShowDialog] = useState({ isShow: false, title: "", type: "text", message: "", confirm: null });
   const [style, setStyle] = useState({})
+  const [showImg, setShowImg] = useState(false)
+  const liDom = useRef(null)
   const imageDom = useRef(null)
 
   useEffect(() => setTaglist(image.tags.split(" ")), [image])
@@ -25,39 +26,19 @@ const ImageList = ({ image, isCollected, limit }) => {
     }
   }, [isCollected])
 
+  // 当容器滚动时判断哪些图片可视
   useEffect(() => {
     const wh = window.innerHeight
-    let mainDom = document.querySelector(".mainbox")
-    let shouldchange = false
-
-    if ((pageOffset + wh - 80) === mainDom.clientHeight) {
-      shouldchange = true
+    const rect = liDom.current.getBoundingClientRect()
+    if (rect.bottom > 80 && rect.top < wh) {
+      setShowImg(true)
     } else {
-      shouldchange = false
+      setShowImg(false)
     }
-
-    const mouseWheel = debounce((e) => {
-      if (e.deltaY > 0 && shouldchange) {
-        // window.scrollTo(0, 0)
-        mainDom = document.querySelector(".mainbox")
-        dispatch(changePage(currentPage + 1))
-        shouldchange = false
-        window.removeEventListener("mousewheel", mouseWheel)
-      }
-      if (pageOffset === 0 && currentPage !== 1 && e.deltaY < 0) {
-        dispatch(changePage(currentPage - 1))
-        window.removeEventListener("mousewheel", mouseWheel)
-      }
-    }, 1500)
-    window.addEventListener("mousewheel", mouseWheel)
-
-    return () => { window.removeEventListener("mousewheel", mouseWheel) }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageOffset])
 
   const onLoad = () => {
-    imageDom.current.src = imageDom.current.getAttribute('data-src')
+    imageDom.current.src = image.preview_url
   }
 
   const showPic = () => {
@@ -69,7 +50,7 @@ const ImageList = ({ image, isCollected, limit }) => {
     if (history.location.pathname !== "/search/" + tag) {
       dispatch(changePage(1))
       dispatch(changeIsShow(true))
-      history.push("/search/" + tag)
+      history.push("/search/" + tag + "/page=" + 1)
     } else {
       console.log("已在当前页")
     }
@@ -94,15 +75,15 @@ const ImageList = ({ image, isCollected, limit }) => {
 
   return (
     <>
-      <li className="imginfo-list">
+      <li className="imginfo-list" ref={liDom}>
         <div className="infolist-imgbox">
-          <img className="img-show"
+          {showImg && <img className="img-show"
             ref={imageDom}
-            onLoad={onLoad} src={loading}
-            data-src={image.preview_url}
+            onLoad={onLoad}
+            src={loading}
             alt={image.id}
             onClick={showPic}
-          />
+          />}
         </div>
         <div className="infolist-list">
           <div className="img-taglist">

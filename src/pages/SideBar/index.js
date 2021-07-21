@@ -22,7 +22,7 @@ const SideBar = ({ breeds, setBarWidth }) => {
     useEffect(() => setBarWidth(sideWidth), [sideWidth, setBarWidth])
 
     useEffect(() => {
-        if (history.location.pathname === "/") {
+        if (history.location.pathname === "/page=1") {
             const titleDom = document.querySelector('.title')
             titleDom.className = 'title active'
         }
@@ -45,7 +45,7 @@ const SideBar = ({ breeds, setBarWidth }) => {
         if (history.location.pathname !== "/search/" + breed) {
             dispatch(changeIsShow(true))
             dispatch(changePage(1))
-            history.push("/search/" + breed)
+            history.push("/search/" + breed + "/page=" + 1)
         } else {
             console.log("已在当前页")
         }
@@ -63,7 +63,7 @@ const SideBar = ({ breeds, setBarWidth }) => {
     }
 
     const showMainPage = (e) => {
-        if (history.location.pathname !== "/") {
+        if (history.location.pathname !== "/page=1") {
             dispatch(changePage(1))
             const activeDom = document.querySelector(".title.active")
             if (!!activeDom) {
@@ -71,7 +71,7 @@ const SideBar = ({ breeds, setBarWidth }) => {
             }
             e.target.className = "title active"
             dispatch(changeIsShow(true))
-            history.push("/")
+            history.push("/page=" + 1)
         } else {
             console.log("已在当前页")
         }

@@ -11,6 +11,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: hoverAnim 0.3s ease;
+}
+
+@keyframes hoverAnim {
+    from {
+        height: 0;
+        overflow: hidden;
+    }
+    to {
+        height: 77px;
+        overflow: hidden;
+    }
 }
 
 .hover-up-menu::after {

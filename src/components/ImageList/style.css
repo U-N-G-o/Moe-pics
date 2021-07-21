@@ -12,16 +12,26 @@
     text-align: center;
     overflow: hidden;
     border: 1px solid rgb(219,219,219);
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-show {
     width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
     cursor: pointer;
+    animation: imgAnim 0.3s ease;
+}
+
+@keyframes imgAnim {
+    0% {
+        opacity: 0;
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.0, 1.0);
+    }
 }
 
 .infolist-list {

@@ -1,0 +1,4 @@
+deploy:
+  type: git
+  repo: https://github.com/U-N-G-o/Moe-pics.git
+  branch: master

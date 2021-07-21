@@ -25,7 +25,7 @@ const App = () => {
 
     return (
 
-        <Router>
+        <Router basename="/Moe-pics">
             {isLoading && <Loading />}
             <Top />
             <SideBar breeds={tags} setBarWidth={setBarWidth} />

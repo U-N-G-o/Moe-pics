@@ -1,17 +1,10 @@
 import axios from 'axios';
 
-import { urlList } from '../configs/config';
+axios.defaults.crossDomain = true;
 
 function axiosGet(options) {
 
-    let url = urlList[0].url
-
-    urlList.map(item =>
-        item.name === options.api ?
-            url = item.url : null
-    )
-
-    axios(url + options.url)
+    axios("https://moepics-proxy.herokuapp.com/" + options.api + options.url)
         .then(res => {
             options.success(res.data)
         })

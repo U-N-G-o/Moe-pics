@@ -17,10 +17,10 @@ const IndexPage = ({ barWidth }) => {
 
     useEffect(() => {
         setShowLoading(true)
-        const count = Math.floor((window.innerWidth - barWidth - 100) / 210) * 10
-        setLimit(count)
+        const limit = Math.floor((window.innerWidth - barWidth - 120) / 260) * 10
+        setLimit(limit)
         const fetchList = async (currentPage) => {
-            const defaultList = await getImgList(api, currentPage, count)
+            const defaultList = await getImgList(api, currentPage, limit)
             history.push("/page=" + currentPage)
             window.scrollTo(0, 0)
             dispatch(changeImgList(defaultList))

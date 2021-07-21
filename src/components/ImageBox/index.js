@@ -13,18 +13,31 @@ import './style.css';
 const ImageBox = ({ image, isSelected, isCollected }) => {
   const imgList = useSelector(state => state.img.imgList)
   const pageOffset = useSelector(state => state.showType.scrollTop)
+  const api = useSelector(state => state.api.api)
   const [showHoverMenu, setShowHoverMenu] = useState(false);
   const [showDialog, setShowDialog] = useState({ isShow: false, title: "", type: "text", message: "", confirm: null });
   const [isHover, setIsHover] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0, up: false });
   const [listPosition, setListPosition] = useState({ x: 0, y: 0, up: false });
   const [btnList, setBtnList] = useState([{ btnInfo: '显示图片', btnFn: {} }])
-  const [showTags, setShowTags] = useState(false);
+  const [showTags, setShowTags] = useState(false)
+  const [showImg, setShowImg] = useState(false)
   const [tags, setTags] = useState([])
+  const boxDom = useRef(null)
   const menuAction = useRef(null);
   const imageDom = useRef(null)
   const dispatch = useDispatch()
   const history = useHistory()
+
+  useEffect(() => {
+    const wh = window.innerHeight
+    const rect = boxDom.current.getBoundingClientRect()
+    if (rect.bottom > 80 && rect.top < wh) {
+      setShowImg(true)
+    } else {
+      setShowImg(false)
+    }
+  }, [pageOffset])
 
   useEffect(() => {
     setShowHoverMenu(false)
@@ -62,10 +75,10 @@ const ImageBox = ({ image, isSelected, isCollected }) => {
     }
 
     const downloadFn = () => {
-      downloadPicture(image)
+      downloadPicture(image, api)
     }
     setBtnList([{ btnInfo: isCollected ? '取消收藏' : '收藏', btnFn: collectFn }, { btnInfo: 'Tag', btnFn: showTags }, { btnInfo: '下载', btnFn: downloadFn }])
-  }, [isCollected, pageOffset, image, dispatch, imgList, history])
+  }, [isCollected, pageOffset, image, dispatch, imgList, history, api])
 
   const onHover = () => {
 
@@ -116,8 +129,9 @@ const ImageBox = ({ image, isSelected, isCollected }) => {
         key={image.id}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
+        ref={boxDom}
       >
-        <img
+        {showImg && <img
           className="cat-image"
           ref={imageDom}
           alt={image.id}
@@ -125,7 +139,7 @@ const ImageBox = ({ image, isSelected, isCollected }) => {
           src={loading}
           data-src={image.preview_url}
           onClick={onClick}
-        />
+        />}
         {isHover &&
           <div
             ref={menuAction}

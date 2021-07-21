@@ -22,9 +22,7 @@
 }
 
 .title.active {
-    color: #fff;
-    fill: #fff;
-    background-color: #5b0db4;
+    background-color: #fff;
 }
 
 .title:hover {

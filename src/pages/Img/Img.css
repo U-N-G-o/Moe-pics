@@ -9,11 +9,11 @@
 .mainbox.grid{
     padding: 2% 60px;
     display: grid;
-    align-items: center;
+    align-content: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, 200px);
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-gap: 15px;
 }
 
 .prebtn {
@@ -39,4 +39,11 @@
 .prebtn:hover,
 .nextbtn:hover {
     fill: #707070
+}
+
+.loadinglist{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
 }

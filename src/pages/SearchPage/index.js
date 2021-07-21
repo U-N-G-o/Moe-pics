@@ -20,7 +20,7 @@ const SearchPage = ({ barWidth }) => {
     useEffect(() => {
         setShowLoading(true)
         window.scrollTo(0, 0)
-        const limit = Math.floor((window.innerWidth - barWidth - 100) / 210) * 10
+        const limit = Math.floor((window.innerWidth - barWidth - 120) / 260) * 10
         const fetchList = async (currentPage) => {
             const selectdedList = await getSelectedImgList(api, tag, currentPage, limit)
             history.push(path + "=" + currentPage)

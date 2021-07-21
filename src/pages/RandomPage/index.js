@@ -13,7 +13,7 @@ const RandomPage = ({ barWidth }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const limit = Math.floor((window.innerWidth - barWidth - 100) / 210) * 10
+    const limit = Math.floor((window.innerWidth - barWidth - 120) / 260) * 10
     setShowLoading(true)
     const fetchList = async (currentPage) => {
       const defaultList = await getRandomList(api, currentPage, limit)

@@ -96,7 +96,7 @@ const Top = () => {
             setValue('')
             dispatch(changePage(1))
             dispatch(changeIsShow(true))
-            history.push("/search/" + value)
+            history.push("/search/" + value + "/page=" + 1)
         } else {
             console.log("已在当前页")
         }
@@ -118,7 +118,7 @@ const Top = () => {
             setValue('')
             dispatch(changePage(1))
             dispatch(changeIsShow(true))
-            history.push("/search/" + tag)
+            history.push("/search/" + tag + "/page=" + 1)
         } else {
             console.log("已在当前页")
         }

@@ -6,9 +6,9 @@ const Button = ({ info, fn }) => {
     const onHover = (e) => {
         const eDom = e.target
         let boxWidth = 200
-        if (eDom.parentNode.scrollHeight > 240) {
-            boxWidth = 181
-        }
+        // if (eDom.parentNode.scrollHeight > 240) {
+        //     boxWidth = 181
+        // }
         const rect = eDom.getBoundingClientRect()
         const startCarousel = () => {
             eDom.setAttribute('style', `

@@ -9,4 +9,7 @@
   background-color: rgb(219, 219, 219);
   overflow: hidden auto;
   z-index: 99;
+  animation: open 0.3s linear;
 }
+
+.idealist::-webkit-scrollbar {display:none}
